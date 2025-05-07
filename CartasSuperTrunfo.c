@@ -1,14 +1,16 @@
 #include <stdio.h>
 
-int main() {
+int main (){
 
 char estado1 [20], estado2 [20];
 char cod1[5], cod2[5];
 char nome1[30], nome2[30];
-int pop1 = 12325000, pop2 = 6748000;
-float area1 = 1521.11, area2 = 1200.25;
-float pib1 = 699.28, pib2 = 300.50;
-int pt1 = 50, pt2 = 30;
+int pop1, pop2;
+float area1, area2;
+float pib1, pib2;
+int pt1, pt2;
+float dp1, dp2;
+float ppc1, ppc2;
 
 printf("Digite o estado da cidade A: \n");
 scanf(" %[^\n]", &estado1);
@@ -22,10 +24,10 @@ scanf(" %[^\n]", &nome1);
 printf("Digite a população da cidade A: \n");
 scanf("%d", &pop1);
 
-printf("Digite a área da cidade A: \n");
+printf("Digite a área da cidade A em km²: \n");
 scanf(" %f", &area1);
 
-printf("Digite o pib da cidade A: \n");
+printf("Digite o pib da cidade A em bilhões de reais: \n");
 scanf(" %f", &pib1);
 
 printf("Digite o número de pontos turísticos da cidade A: \n");
@@ -45,17 +47,22 @@ scanf(" %[^\n]", &nome2);
 printf("Digite a população da cidade B: \n");
 scanf("%d", &pop2);
 
-printf("Digite a área da cidade B: \n");
+printf("Digite a área da cidade B em km²: \n");
 scanf(" %f", &area2);
 
-printf("Digite o pib da cidade B: \n");
+printf("Digite o pib da cidade B em bilhões de reais: \n");
 scanf(" %f", &pib2);
 
 printf("Digite o número de pontos turísticos da cidade B: \n");
 scanf("%d", &pt2);
 
-printf("\nCidade A:\n Estado: %s\n Código: %s\n Cidade: %s\n População: %d\n Área²: %.2f\n PIB: %.2f\n Número de pontos turísticos: %d\n", estado1, cod1, nome1, pop1, area1, pib1, pt1);
-printf("\nCidade B:\n Estado: %s\n Código: %s\n Cidade: %s\n População: %d\n Área²: %.2f\n PIB: %.2f\n Número de pontos turísticos: %d\n", estado2, cod2, nome2, pop2, area2, pib2, pt2);
+dp1 = pop1 / area1;
+dp2 = pop2 / area2;
+ppc1 = (pib1 * 1000000000) / pop1; 
+ppc2 = (pib2 * 1000000000) / pop2; 
+
+printf("\nCidade A:\n Estado: %s\n Código: %s\n Cidade: %s\n População: %d\n Área: %.2f km²\n PIB: %.2f bilhões de reais \n Número de pontos turísticos: %d\n Densidade Populacional: %.2f hab/km²\n PIB per Capita: %.2f reais\n", estado1, cod1, nome1, pop1, area1, pib1, pt1, dp1, ppc1);
+printf("\nCidade B:\n Estado: %s\n Código: %s\n Cidade: %s\n População: %d\n Área²: %.2f km²\n PIB: %.2f bilhões de reais \n Número de pontos turísticos: %d\n Densidade Populacional: %.2f hab/km²\n PIB per Capita: %.2f reais\n", estado2, cod2, nome2, pop2, area2, pib2, pt2, dp2, ppc2);
 
 return 0;
 
