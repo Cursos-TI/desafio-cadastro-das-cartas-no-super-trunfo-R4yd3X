@@ -79,6 +79,7 @@ printf("Densidade Populacional 1 > Densidade Populacional 2: (%d)\n", dp1 < dp2)
 printf("PIB per Capita 1 > PIB per Capita 2: (%d)\n", ppc1 > ppc2);
 printf("Superpoder 1 > Superpoder 2: (%d)\n", superpoder1 > superpoder2);
 
+
 return 0;
 
 }
